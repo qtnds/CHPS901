@@ -1,0 +1,5 @@
+variant,n_particles,iters,n_ranks,n_threads,node,total_us
+seq,100000,20,1,1,romeo-a057,983927
+omp,100000,20,1,,romeo-a057,0
+mpi,100000,20,1,1,romeo-a057,0
+hybrid,100000,20,1,,romeo-a057,0

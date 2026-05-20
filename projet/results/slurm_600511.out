@@ -1,0 +1,14 @@
+=== Job SLURM 600511 ===
+Nœuds : 1  Rangs : 1  Threads/rang : 
+N_PARTICLES=100000  ITERS=20
+Séquentiel ... 984678 us
+OpenMP ( threads) ... 0 us
+MPI (1 rangs) ... 0 us
+Hybride (1 rangs ×  threads) ... 0 us
+
+=== Résultats dans results/cluster_600511.csv ===
+variant,n_particles,iters,n_ranks,n_threads,node,total_us
+seq,100000,20,1,1,romeo-a057,984678
+omp,100000,20,1,,romeo-a057,0
+mpi,100000,20,1,1,romeo-a057,0
+hybrid,100000,20,1,,romeo-a057,0
