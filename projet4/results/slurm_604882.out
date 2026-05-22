@@ -1,0 +1,32 @@
+Loading aarch64 (arm, gpus available) environment
+Environment loaded. Spack available.
+============================================
+  BH Benchmark — SLURM job 604882
+  Nœud       : romeo-a057
+  Début      : 2026-05-22 11:32:04
+  Partition  : instant
+  ntasks     : 1
+  cpus/task  : 1
+  Submit dir : /gpfs/home/qdasilva/CHPS0901/projet4
+============================================
+
+--- Compilation ---
+nvcc -O3 -std=c++17 -arch=sm_90 -I src --expt-relaxed-constexpr -Xcompiler -fopenmp -o bin/bh_cuda src/BH_cuda.cu
+[OK] bin/bh_cuda  (GPU sm_90)
+
+MPI_RANKS    : 1
+OMP_THREADS  : 1 2 4 8
+
+--- Lancement benchmark.sh  ---
+
+[11:32:08] === Benchmark BH parallèle ===
+[11:32:08] PARTICLES=5000 10000 50000 100000 500000
+[11:32:08] PARTICLES_CUDA=1000 5000 10000 50000 100000 500000
+[11:32:08] ITERS=10  OMP_THREADS=1 2 4 8  MPI_RANKS=1
+[11:32:08] REPEATS=3  QUICK=0  PHASE=0
+[11:32:08] 
+[11:32:08] === Séquentiel ===
+[11:32:08]   seq  N=5000 → 149940 us  [tree=5175 force=144569 integ=196]
+[11:32:10]   seq  N=10000 → 474706 us  [tree=15324 force=458990 integ=392]
+[11:32:23]   seq  N=50000 → 4432489 us  [tree=128825 force=4301711 integ=1953]
+[11:32:56]   seq  N=100000 → 10761620 us  [tree=292142 force=10465546 integ=3932]
